@@ -2,7 +2,9 @@ function dataHandling2(arr){
     var newName = arr[1] + ' Elsharawy'
     var newAddress = 'Provinsi ' + arr[2];
     var birthDate = arr[3];
-    arr.splice(1, 4, newName, newAddress, birthDate, "Pria", "SMA Internasional Metro");
+    var gender = "Pria";
+    var shsName = "SMA Internasional Metro";
+    arr.splice(1, 4, newName, newAddress, birthDate, gender, shsName);
     console.log(arr);
 
     var formatDate = birthDate.split('/');
@@ -48,7 +50,7 @@ function dataHandling2(arr){
             break;
             
     }
-    console.log(formatDate.sort(function(a,b){ return b - a}));
+    console.log(formatDate.sort(function(a,b){return b - a}));
     console.log(arr[3].split('/').join('-'))
     console.log(arr[1].slice(0,15))
 }
