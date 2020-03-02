@@ -1,5 +1,11 @@
 function pasanganTerbesar(num){
+  if(num == undefined){
+    return "Input tidak valid"
+  }
   var str = num.toString();
+  if(str.length == 1){
+    return "Input tidak valid"
+  }
   var tempArr = [];
   
   for(i = 0; i < str.length-1; i++){
@@ -36,3 +42,4 @@ console.log(pasanganTerbesar(12783456)); // 83
 console.log(pasanganTerbesar(910233)); // 91
 console.log(pasanganTerbesar(71856421)); // 85
 console.log(pasanganTerbesar(79918293)); // 99
+console.log(pasanganTerbesar())
