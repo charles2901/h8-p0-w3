@@ -27,7 +27,20 @@ function targetTerdekat(arr) {
     if(result.length == 0){
         return 0;
     }
-    return Math.min(...result);
+
+    for(i = 0; i < result.length; i++){
+        for(j = 0; j < result.length; j++){
+            if(result[j] > result[j+1]){
+                var temp = result[j];
+                result[j] = result[j+1];
+                result[j+1] = temp;
+            }
+        }
+    }
+    return result[0];
+
+    // cara return value lain dengan built-in 
+    // return Math.min(...result);
 }
   
   // TEST CASES

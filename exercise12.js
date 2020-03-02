@@ -1,15 +1,29 @@
-function tentukanDeretGeometri(arr) {
-    var perbandinganGeo = arr[1] / arr[0];
-    var flag = true;
-
-    for(i = 1; i < arr.length-1; i++){
-        if(perbandinganGeo !== arr[i+1] / arr[i]){
-            flag = false;
-            break;
+function tentukanDeretGeometri(arr){
+    
+    for(i = 1; i < arr.length - 1; i++){
+        if(arr[i] / arr[i-1] != arr[i+1] / arr[i]){
+            return false;
         }
     }
-    return flag;
+    return true;
 }
+
+// cara lain
+
+// function tentukanDeretGeometri(arr) {
+//     var perbandinganGeo = arr[1] / arr[0];
+//     var flag = true;
+
+//     for(i = 1; i < arr.length-1; i++){
+//         if(perbandinganGeo !== arr[i+1] / arr[i]){
+//             flag = false;
+//             break;
+//         }
+//     }
+//     return flag;
+// }
+
+
   
   // TEST CASES
 console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true

@@ -52,7 +52,7 @@ function dataHandling2(arr){
     }
     console.log(formatDate.sort(function(a,b){return b - a}));
     console.log(arr[3].split('/').join('-'))
-    console.log(arr[1].slice(0,15))
+    console.log(arr[1].slice(0,14))
 }
 
 var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"];

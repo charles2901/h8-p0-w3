@@ -1,16 +1,30 @@
-function tentukanDeretAritmatika(arr) {
-    var perbedaanDeret = arr[1] - arr[0];
-    var flag = true;
-
-    for(i = 1; i < arr.length-1; i++){
-        if(arr[i+1] - arr[i] !== perbedaanDeret){
-            flag = false;
-            break;
+function tentukanDeretAritmatika(arr){
+    for(i = 1; i < arr.length - 1; i++){
+        if(arr[i] - arr[i-1] != arr[i+1] - arr[i]){
+            return false;
         }
     }
-    return flag;
+    return true;
 }
-  
+
+
+// cara lain
+
+// function tentukanDeretAritmatika(arr) {
+//     var perbedaanDeret = arr[1] - arr[0];
+//     var flag = true;
+
+//     for(i = 1; i < arr.length-1; i++){
+//         if(arr[i+1] - arr[i] !== perbedaanDeret){
+//             flag = false;
+//             break;
+//         }
+//     }
+//     return flag;
+// }
+
+
+
   // TEST CASES
 console.log(tentukanDeretAritmatika([1, 2, 3, 4, 5, 6])); // true
 console.log(tentukanDeretAritmatika([2, 4, 6, 12, 24])); // false
