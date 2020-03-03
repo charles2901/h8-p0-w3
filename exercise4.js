@@ -4,10 +4,51 @@ function dataHandling2(arr){
     var birthDate = arr[3];
     var gender = "Pria";
     var shsName = "SMA Internasional Metro";
+
+    var formatDate = birthDate.split('/');
+
+    //checking valid birthdate
+    if(formatDate[1] == '01' || formatDate[1] == '03' || formatDate[1] == '05' || formatDate[1] == '07' || formatDate[1] == '08' || formatDate[1] == '10' || formatDate[1] == '12'){
+        if(parseInt(formatDate[0]) > 31 || parseInt(formatDate[0]) < 1){
+            console.log("Birthdate input incorrect")
+            return "Birthdate input incorrect"
+        }
+        
+    }
+    else if(formatDate[1] == '04' || formatDate[1] == '06' || formatDate[1] == '09' || formatDate[1] == '11'){
+        if(parseInt(formatDate[0]) > 30 || parseInt(formatDate[0]) < 1){
+            console.log("Birthdate input incorrect")
+            return "Birthdate input incorrect"
+        }
+    }
+    else if(formatDate[1] == '02'){ 
+        // handle kabisat
+        if(parseInt(formatDate[2]) % 4 == 0 && parseInt(formatDate[2]) % 100 != 0 ){
+            if(parseInt(formatDate[0]) > 29 || parseInt(formatDate[0]) < 1){
+                console.log("Birthdate input incorrect")
+                return "Birthdate input incorrect"
+            }        
+        }
+        else if(parseInt(formatDate[2]) % 4 == 0 && parseInt(formatDate[2]) % 100 == 0 && parseInt(formatDate[2]) % 400 == 0){
+            if(parseInt(formatDate[0]) > 29 || parseInt(formatDate[0]) < 1){
+                console.log("Birthdate input incorrect")
+                return "Birthdate input incorrect"
+            }
+        }
+        else if(parseInt(formatDate[0]) > 28 || parseInt(formatDate[0]) < 1){
+            console.log("Birthdate input incorrect")
+            return "Birthdate input incorrect"
+        }
+    }
+    else{
+        console.log("Birthdate input incorrect")
+        return "Birthdate input incorrect"
+    }
+    
+    
     arr.splice(1, 4, newName, newAddress, birthDate, gender, shsName);
     console.log(arr);
 
-    var formatDate = birthDate.split('/');
     switch(formatDate[1]){
         case '01':
             console.log('Januari');
