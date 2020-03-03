@@ -45,7 +45,7 @@ function dataHandling2(arr){
         return "Birthdate input incorrect"
     }
     
-    
+
     arr.splice(1, 4, newName, newAddress, birthDate, gender, shsName);
     console.log(arr);
 
@@ -85,11 +85,7 @@ function dataHandling2(arr){
             break;
         case '12':
             console.log('Desember');
-            break;
-        default:
-            console.log("Birthdate input incorrect");
-            break;
-            
+            break;            
     }
     console.log(formatDate.sort(function(a,b){return b - a}));
     console.log(arr[3].split('/').join('-'))
