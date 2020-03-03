@@ -1,4 +1,7 @@
 function palindrome(kata){
+  if(kata == ''){
+    return "Input kosong"
+  }
   var balikKata = '';
   for(i = kata.length-1 ; i >= 0; i--){
     balikKata += kata[i];

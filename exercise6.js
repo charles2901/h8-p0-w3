@@ -1,4 +1,16 @@
 function angkaPalindrome(num){
+    if(num == undefined){
+        return "Input tidak valid"
+    }
+    var str = num.toString();
+    var balikStr = '';
+    for(i = str.length-1; i >=0; i--){
+        balikStr += str[i];
+    }
+    if(balikStr == str){
+        console.log(`Input ${num} merupakan angka palindrome`)
+    }
+
     var isPalindrome = false;
     while(isPalindrome == false){
         num++;
@@ -11,7 +23,7 @@ function angkaPalindrome(num){
             isPalindrome = true;
         }    
     }
-    return num;
+    return `Angka palindrome selanjutnya adalah ${num}`;
 }
 
 
